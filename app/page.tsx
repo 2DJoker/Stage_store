@@ -1,103 +1,95 @@
-import Image from "next/image";
+import { Title } from "@/components/shared/title";
+import { Container } from "@/components/shared/container";
+import { TopBar } from "@/components/shared/top-bra";
+import { Filters } from "@/components/shared/Filters";
+import { ProductsGroupList } from "@/components/shared/products-group-list";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+    <Container className="mt-5">
+      <Title text="Все товары" size="lg" className="font-extrabold" />
+    
+    </Container>
+    <TopBar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <Container className="mt-10 pb-14">
+
+      <div className="flex gap-[80px]">
+
+       <div className="w-[250px]">
+        <Filters />
+       </div>
+
+        <div className="flex-1">
+          <div className="flex flex-col gap-16">
+            <ProductsGroupList title="Обувь" items={[
+              {
+              id: 1,
+              name: "Jordan 1 Travis Scott",
+              imageUrl: 'https://res.cloudinary.com/dc57mpiao/image/upload/v1727089487/travis_ytdydd.jpg',
+              price: 179000,
+              items: [{ price: 179000 }],
+            },
+            {
+              id: 2,
+              name: "Jordan 1 Travis Scott",
+              imageUrl: 'https://res.cloudinary.com/dc57mpiao/image/upload/v1727089487/travis_ytdydd.jpg',
+              price: 179000,
+              items: [{ price: 179000 }],
+            },
+            {
+              id: 3,
+              name: "Jordan 1 Travis Scott",
+              imageUrl: 'https://res.cloudinary.com/dc57mpiao/image/upload/v1727089487/travis_ytdydd.jpg',
+              price: 179000,
+              items: [{ price: 179000 }],
+            },
+            {
+              id: 4,
+              name: "Jordan 1 Travis Scott",
+              imageUrl: 'https://res.cloudinary.com/dc57mpiao/image/upload/v1727089487/travis_ytdydd.jpg',
+              price: 179000,
+              items: [{ price: 179000 }],
+            },
+            {
+              id: 5,
+              name: "Jordan 1 Travis Scott",
+              imageUrl: 'https://res.cloudinary.com/dc57mpiao/image/upload/v1727089487/travis_ytdydd.jpg',
+              price: 179000,
+              items: [{ price: 179000 }],
+            }
+            ]} categoryId={1} />
+            <ProductsGroupList title="Одежда" items={[
+              {
+                id: 1,
+                name: "Толстовка False Perception",
+                imageUrl: 'https://res.cloudinary.com/dc57mpiao/image/upload/v1743805481/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-04-04_%D0%B2_15.58.33_owr932.png',
+                price: 9000,
+                items: [{ price: 9000 }],
+              },
+              {
+                id: 2,
+                name: "Куртка Stone Island Painted Camo",
+                imageUrl: "https://res.cloudinary.com/dc57mpiao/image/upload/v1747315357/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-05-15_%D0%B2_07.28.31_cdmvwn.png",
+                price: 89900,
+                items: [{ price: 89900 }],
+              }
+             ]} categoryId={2} />
+             <ProductsGroupList title="Головные уборы" items={[
+              {
+                id: 1,
+                name: "Supreme SS23 cap",
+                imageUrl: 'https://res.cloudinary.com/dc57mpiao/image/upload/v1747314710/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-05-15_%D0%B2_07.13.29_vfgoz3.png',
+                price: 8900,
+                items: [{ price: 8900}],
+              }
+             ]} categoryId={3} />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </Container>
+
+    </>
   );
 }
