@@ -13,7 +13,7 @@ const Premium = "Premium";
 const cats = [
     { id: 1, name: 'Обувь' },
     { id: 2, name: 'Одежда' },
-    { id: 3, name: 'Головные уборы' },
+    { id: 3, name: 'Головные уборы'},
     { id: 4, name: 'Парфюмерия' },
     { id: 5, name: 'Аксессуары' },
 ];
