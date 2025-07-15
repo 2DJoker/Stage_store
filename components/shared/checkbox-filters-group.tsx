@@ -16,7 +16,7 @@ interface Props {
   searchInputPlaceholder?: string;
   onClickCheckbox?: (id: string) => void;
   defaultValue?: string[];
-  selected?: Set<string>;
+  selectedIds?: Set<string>
   className?: string;
   name?: string;
 }
@@ -30,7 +30,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   className,
   loading,
   onClickCheckbox,
-  selected,
+  selectedIds,
   name,
 }) => {
   const [showAll, setShowAll] = React.useState(false);
@@ -45,7 +45,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
       <div className={className}>
         <p className="font-bold mb-3">{title}</p>
 
-        {...Array(limit)
+        {...Array(5)
           .fill(0)
           .map((_, index) => <Skeleton key={index} className="h-6 mb-4 rounded-[8px]" />)}
 
@@ -67,7 +67,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
           <Input
             onChange={onChangeSearchInput}
             placeholder={searchInputPlaceholder}
-            className="bg-gray-50 border-none"
+            className="bg-gray-100 border-none"
           />
         </div>
       )}
@@ -79,7 +79,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
             text={item.text}
             value={item.value}
             endAdornment={item.endAdornment}
-            checked={selected?.has(item.value)}
+            checked={selectedIds?.has(item.value)}
             onCheckedChange={() => onClickCheckbox?.(item.value)}
             name={name}
           />
@@ -87,7 +87,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
       </div>
 
       {items.length > limit && (
-        <div className={showAll ? 'border-t border-t-neutral-100 mt-4' : ''}>
+        <div className={showAll ? 'border-t border-t-neutral-300 mt-4' : ''}>
           <button onClick={() => setShowAll(!showAll)} className="text-primary mt-3">
             {showAll ? 'Скрыть' : '+ Показать все'}
           </button>
