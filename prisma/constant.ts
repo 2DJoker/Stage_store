@@ -43,6 +43,9 @@ export const categories = [
         name: 'Парфюмерия',
     },
     {
+        name: 'Сумки и Рюкзаки'
+    },
+    {
         name: 'Аксессуары',
     },
     {

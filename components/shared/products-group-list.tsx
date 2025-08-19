@@ -27,7 +27,6 @@ export const ProductsGroupList: React.FC<Props> = ({
 
   const intersectionRef = React.useRef<HTMLDivElement>(null);
 
-  // 👇 это устраняет ошибку
   const intersection = useIntersection(
     intersectionRef as React.RefObject<HTMLElement>,
     { threshold: 0.4 }
@@ -40,7 +39,11 @@ export const ProductsGroupList: React.FC<Props> = ({
   }, [categoryId, intersection?.isIntersecting]);
 
   return (
-    <div className={className} id={title} ref={intersectionRef}>
+    <div
+      className={className}
+      id={`category-${categoryId}`} // 👈 это нужно для scrollIntoView
+      ref={intersectionRef}
+    >
       <Title text={title} size="lg" className="font-extrabold mb-5" />
 
       <div className={cn('grid grid-cols-3 gap-[50px]', listClassName)}>
